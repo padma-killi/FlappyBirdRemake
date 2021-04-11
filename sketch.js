@@ -38,7 +38,7 @@ function draw(){
     
     if(width >= 1000){
       textSize(20);
-      text("Press spacebar to fly",width/2,height/4 );  
+      text("Press spacebar to fly",width/2,height/3.75);  
       text("Beware of the redchillies and  pipes ",width/2,height/3);
       text("Help the bird reach its eggs ",width/2,height/2.5);
       //fill("darkred");
