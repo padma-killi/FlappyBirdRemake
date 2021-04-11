@@ -35,8 +35,9 @@ function draw(){
     fill("yellow");
    
     textFont("cursive");
-    textSize(20);
+    
     if(width >= 1000){
+      textSize(20);
       text("Press spacebar to fly",width/2,height/4 );  
       text("Beware of the redchillies and  pipes ",width/2,height/3);
       text("Help the bird reach its eggs ",width/2,height/2.5);
@@ -46,6 +47,7 @@ function draw(){
       text("If you miss eggs at the end you lose!",width/2,height/1.5);
     }
     else{
+      textSize(14);
       text("Press spacebar to fly",width/18,height/4 );  
       text("Beware of the redchillies and  pipes ",width/18,height/3);
       text("Help the bird reach its eggs ",width/18,height/2.5);
