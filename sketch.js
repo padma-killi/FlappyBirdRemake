@@ -15,43 +15,45 @@ function preload(){
 function setup(){
     var canvas = createCanvas(windowWidth, windowHeight);
    
-    
     bird = createSprite(width/5,height/5,width/10,height/10);
     bird.addAnimation("flying",birdflying);
     bird.addAnimation("hit",hitAnimation);
-    bird.scale = 0.4;
-
-    
+    bird.scale = 0.4;    
 
     greenchilliGroup = new Group();
     redchilliGroup = new Group();
     pipe1Group = new Group();
     pipe2Group = new Group();
-    eggsGroup = new Group();
-
-
-
-    
-   
+    eggsGroup = new Group();       
    
 }
 
 
 function draw(){
   background(backgroundImage)
- if(gamestate == "info"){
+  if(gamestate == "info"){
     fill("yellow");
    
     textFont("cursive");
     textSize(20);
-    text("Press spacebar to fly",width/2,height/4 );  
-    text("Beware of the redchillies and  pipes ",width/2,height/3);
-    text("Help the bird reach its eggs ",width/2,height/2.5);
-    //fill("darkred");
-    text("Take the eggs back at the end to win",width/2,height/2);
-    text("Consume greenchillies to become smaller!",width/2,height/1.75);
-    text("If you miss eggs at the end you lose!",width/2,height/1.5);
- 
+    if(width >= 1000){
+      text("Press spacebar to fly",width/2,height/4 );  
+      text("Beware of the redchillies and  pipes ",width/2,height/3);
+      text("Help the bird reach its eggs ",width/2,height/2.5);
+      //fill("darkred");
+      text("Take the eggs back at the end to win",width/2,height/2);
+      text("Consume greenchillies to become smaller!",width/2,height/1.75);
+      text("If you miss eggs at the end you lose!",width/2,height/1.5);
+    }
+    else{
+      text("Press spacebar to fly",width/18,height/4 );  
+      text("Beware of the redchillies and  pipes ",width/18,height/3);
+      text("Help the bird reach its eggs ",width/18,height/2.5);
+      //fill("darkred");
+      text("Take the eggs back at the end to win",width/18,height/2);
+      text("Consume greenchillies to become smaller!",width/18,height/1.75);
+     text("If you miss eggs at the end you lose!",width/18,height/1.5);
+   } 
  
  if(keyCode == 32){
      gamestate = "Play";
@@ -130,7 +132,7 @@ if(gamestate == "win"){
     textFont("cursive");
     textSize(50);
     fill("darkred");
-    text("YOU WIN!",360,200);
+    text("YOU WIN!",width/3,height/2);
     bird.destroy();
     pipe1Group.destroy();
     pipe2Group.destroy();
@@ -140,7 +142,7 @@ if(gamestate == "win"){
 }
 
 
-if(bird.y>410){
+if(bird.y>10+height){
  gamestate = "End"
 }
 
@@ -150,8 +152,8 @@ if(bird.y>410){
  textSize(20);
  textFont("Arial");
  fill("darkred");
- text("score:"+score,width/20,height/5);
- text("life:"+life,width/20,20+height/5);
+ text("score:"+score,width/20,height/10);
+ text("life:"+life,width/20,20+height/10);
  
  if(gamestate == "End"){
     background(backgroundImage); 
