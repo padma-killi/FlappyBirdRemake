@@ -174,9 +174,7 @@ if(bird.y>10+height){
 function spawnObstacles1(){
  
  if(frameCount%150 == 0){
-    obstacle1 = createSprite(width,0,width/5,height/2);
-   
-  
+    obstacle1 = createSprite(width,0,width/5,height/2);  
 
     obstacle1.velocity.x = -2;
     var rand1 = Math.round(random(1,2))
@@ -198,8 +196,7 @@ function spawnObstacles1(){
 function spawnObstacles2(){
 
 if(frameCount%120 == 0){
-    obstacle2 = createSprite(width,height,width/5,height/2);
-    
+    obstacle2 = createSprite(width,height,width/5,height/2);    
     
     obstacle2.velocity.x = -2; 
     var rand2 = Math.round(random(1,2))
